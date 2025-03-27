@@ -1,4 +1,4 @@
-﻿from functools import lru_cache
+﻿from functools import cache
 
 def read_topographic_map(filename):
     with open(filename, "r") as file:
@@ -39,7 +39,7 @@ def count_distinct_paths(grid, start):
 
     directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
-    @lru_cache(None)
+    @cache
     def dfs(r, c):
         if grid[r][c] == 9:
             return 1
